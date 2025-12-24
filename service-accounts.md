@@ -21,3 +21,39 @@ secrets:
   - name: build-robot-secret # usually NOT present for a manually generated token
 ```
 
+- create a role
+    - multiple capabilities should be listed separately
+- create a role binding
+    - bind to an SA, user, or group
+
+```
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  creationTimestamp: "2025-12-24T20:45:26Z"
+  name: developer
+  namespace: blue
+  resourceVersion: "3612"
+  uid: dbcfa22f-b31b-42ec-814f-9763a330c33f
+rules:
+- apiGroups:
+  - ""
+  resourceNames:
+  - dark-blue-app
+  resources:
+  - pods
+  verbs:
+  - get
+  - watch
+  - create
+  - delete
+- apiGroups:
+  - apps
+  resources:
+  - deployments
+  verbs:
+  - get
+  - watch
+  - create
+  - delete
+  ```
