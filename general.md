@@ -24,6 +24,7 @@ kube-bench run --targets="master,etcd"
 # Accessing the API server
 
 ```
+k proxy --port=8090 &
 k proxy 8001&
 
 controlplane ~ ✦ ➜  curl localhost:8001/api
