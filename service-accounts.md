@@ -2,6 +2,9 @@
 
 - Manually created a long lived API token for a SA
 - https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
+- docs:
+  - long lived API token
+  - service account secret
 
 ```
 apiVersion: v1
