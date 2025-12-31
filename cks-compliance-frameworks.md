@@ -27,20 +27,23 @@
 ### Overview
 A knowledge base of adversary tactics and techniques used to attack container and Kubernetes environments. Helps defenders understand how attacks happen and what controls to implement.
 
-### Attack Lifecycle (Tactics)
+### Attack Lifecycle (Tactics) — Containers Matrix
+
+The Containers Matrix has **9 tactics** (not the full 14 from Enterprise):
 
 | # | Tactic | Description | K8s Example |
 |---|--------|-------------|-------------|
 | 1 | **Initial Access** | Gaining first access to cluster | Exposed dashboard, compromised image, stolen kubeconfig |
 | 2 | **Execution** | Running malicious code | `kubectl exec`, deploying rogue containers |
-| 3 | **Persistence** | Maintaining access | Backdoor containers, modified configs |
-| 4 | **Privilege Escalation** | Gaining higher privileges | Exploiting privileged containers, hostPID |
-| 5 | **Defense Evasion** | Avoiding detection | Clearing logs, disabling monitoring |
-| 6 | **Credential Access** | Stealing credentials | Accessing Secrets, service account tokens |
-| 7 | **Discovery** | Reconnaissance | Scanning kubelet, API server enumeration |
-| 8 | **Lateral Movement** | Moving between resources | Pod-to-pod attacks, node compromise |
-| 9 | **Collection** | Gathering data | Exfiltrating secrets, config data |
-| 10 | **Impact** | Causing damage | Cryptomining, DoS, data destruction |
+| 3 | **Persistence** | Maintaining access | Backdoor containers, CronJobs, modified configs |
+| 4 | **Privilege Escalation** | Gaining higher privileges | Escape to host, privileged containers, hostPID |
+| 5 | **Defense Evasion** | Avoiding detection | Clearing logs, disabling tools, masquerading |
+| 6 | **Credential Access** | Stealing credentials | Brute force, unsecured credentials, stealing tokens |
+| 7 | **Discovery** | Reconnaissance | Container/resource discovery, network scanning |
+| 8 | **Lateral Movement** | Moving between resources | Application access tokens |
+| 9 | **Impact** | Causing damage | Cryptomining, DoS, data destruction |
+
+**Note:** "Collection", "Reconnaissance", "Resource Development", "Command and Control", and "Exfiltration" are NOT in the Containers matrix.
 
 ### Key Kubernetes Attack Techniques
 
